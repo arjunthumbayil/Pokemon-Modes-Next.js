@@ -14,7 +14,6 @@ export default function Home() {
         "https://jherr-pokemon.s3.us-west-1.amazonaws.com/index.json"
       );
       const data = await response.json();
-      console.log("data = " + data);
       setPokemons(data);
     }
     getPokemons();
@@ -24,6 +23,7 @@ export default function Home() {
       <Head>
         <title>Pokemon List</title>
       </Head>
+      <h2>Pokemon List</h2>
       <div className={styles.grid}>
         {pokemons.map((pokemon) => (
           <div className={styles.card} key={pokemon.id}>
